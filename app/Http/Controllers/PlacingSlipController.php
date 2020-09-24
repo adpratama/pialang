@@ -120,7 +120,7 @@ class PlacingSlipController extends Controller
     public function setStatus(Request $request, $id)
     {
         $request->validate([
-            'status' => 'required|in:APPROVE, REJECT, UNAPPROVE'
+            'status' => 'required|in:UNAPPROVED,APPROVED,REJECTED'
         ]);
 
         $item = Placing::findOrFail($id);
@@ -129,5 +129,14 @@ class PlacingSlipController extends Controller
         $item->save();
 
         return redirect()->route('placing.index');
+    }
+
+    public function qs($id)
+    {
+        $item = Placing::findOrFail($id);
+        
+        return view('pages.quotation.create')->with([
+            'item'=>$item
+        ]);
     }
 }

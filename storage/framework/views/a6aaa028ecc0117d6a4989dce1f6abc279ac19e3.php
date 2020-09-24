@@ -45,11 +45,23 @@
                           <?php endif; ?>
                           <?php echo e($item->status); ?>
 
-                      </td>
+                        </td>
                         <td>
-                          <a class="btn mb-2 btn-light" href="<?php echo e(route('placing.edit', $item->id)); ?> ">Edit</a>
-                          <a class="btn mb-2 btn-light" href="<?php echo e(route('placing.show', $item->id)); ?> ">Lihat</a>
-                          
+                          <?php if($item->status == 'UNAPPROVED'): ?>
+                              <a href="<?php echo e(route('placing.status', $item->id)); ?>?status=APPROVED" class="btn btn-success ">                                                     
+                                  APPROVE
+                              </a>
+                              <a href="<?php echo e(route('placing.status', $item->id)); ?>?status=REJECTED" class="btn btn-danger ">                                                     
+                                  REJECT
+                              </a>
+                              <a class="btn btn-light " href="<?php echo e(route('placing.edit', $item->id)); ?> ">Edit</a>
+
+                          <?php endif; ?>
+                          <a class="btn btn-light " href="<?php echo e(route('placing.show', $item->id)); ?> "><i class="fe fe-file-text"></i></a>
+                          <?php if($item->status == 'APPROVED'): ?>
+                              <a href="<?php echo e(route('placing.qs', $item->id)); ?> " class="btn btn-success ">Create Quotation</a>
+                              
+                          <?php endif; ?>
                         </td>
                       </tr>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
@@ -70,8 +82,19 @@
   </div>
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startPush('before-script'); ?>
-
-
+<?php $__env->startPush('after-script'); ?>
+<script src='<?php echo e(asset('js/jquery.dataTables.min.js')); ?>'></script>
+<script src='<?php echo e(asset('js/dataTables.bootstrap4.min.js')); ?>'></script>
+<script>
+  $('#dataTable-1').DataTable(
+  {
+    autoWidth: true,
+    "lengthMenu": [
+      [16, 32, 64, -1],
+      [16, 32, 64, "All"]
+    ]
+  });
+</script> --}}
+{{-- <script src="js/apps.js"></script>
 <?php $__env->stopPush(); ?>
 <?php echo $__env->make('layouts.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/pialang/resources/views/pages/placing/index.blade.php ENDPATH**/ ?>

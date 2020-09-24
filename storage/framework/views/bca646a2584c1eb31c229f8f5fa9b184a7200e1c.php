@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/jquery.steps.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/jquery.timepicker.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/quill.snow.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/dataTables.bootstrap4.css')); ?>">
     
     
     <!-- Date Range Picker CSS -->

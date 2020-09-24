@@ -9,11 +9,11 @@
         <div class="card-body">
           <form action="<?php echo e(route('placing.store')); ?>" method="POST">
             <?php echo csrf_field(); ?>     
-            
+            <input type="hidden" value="UNAPPROVED"  name="status">
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-1 col-form-label">Jakarta,</label>
                 <div class="col-sm-3 input-group">
-                    <input type="text" name="date" class="form-control drgpicker" id="date-input1" value="" aria-describedby="button-addon2">
+                    <input type="text" name="date" class="form-control drgpicker" id="date-input1" aria-describedby="button-addon2">
                     <div class="input-group-append">
                       <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
                     </div>
@@ -95,7 +95,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group row">
                 <label for="warranty" class="col-sm-3 col-form-label">SCOPE OF WORK PROJECT</label>
-                <div class="col-sm-3 ">
+                <div class="col-sm-6 ">
                     <input type="text" name="scope" 
                         class="form-control <?php $__errorArgs = ['scope'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -331,7 +331,28 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 </div>
             </div>
-            
+            <div class="form-group row">
+                <label for="confirmby" class="col-sm-3 col-form-label">CONFIRMED BY</label>
+                <div class="col-sm-6 ">
+                    <textarea name="confirmby" 
+                        class="ckeditor10 form-control <?php $__errorArgs = ['confirmby'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"><?php echo e(old('confirmby')); ?></textarea>
+                    <?php $__errorArgs = ['confirmby'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-muted"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary float-right">Tambahkan</button>
           </form>
         </div> <!-- /. card-body -->
@@ -339,4 +360,117 @@ unset($__errorArgs, $__bag); ?>
     </div> <!-- /. col -->
   </div>
 <?php $__env->stopSection(); ?>
+
+<?php $__env->startPush('after-script'); ?>
+<script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor1' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor2' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor3' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor4' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor5' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor6' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor7' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor8' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor9' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor10' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+<?php $__env->stopPush(); ?>
 <?php echo $__env->make('layouts.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/pialang/resources/views/pages/placing/create.blade.php ENDPATH**/ ?>

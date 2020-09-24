@@ -98,14 +98,6 @@
                         {!!$item->coverage!!}
                     </div>                    
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-3">
-                        <p >DETAILS OF VEHICLE</p>
-                    </div>                    
-                    <div class="col-sm-9 ">
-                        {!!$item->vehicle_details!!}
-                    </div>                    
-                </div>
                 <div class="row" style="background-color: rgb(153, 150, 150); display: block">
                     <p style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;FINANCIAL & OTHERS</p>
                 </div>
@@ -149,14 +141,10 @@
                 <p style="margin-bottom:0" >Signed For and on behalf of</p>
                         {!!$item->signfor!!}
                     </div>
-                    <div class="col-sm-6 ">
+                    <div class="col-sm-6 " align="right">
                         <p style="margin-bottom:0">&nbsp;</p> 
                         <p style="margin-bottom:0; text-align:right"  >Noted and Confirmed by</p>
-                        <p style="text-align:right"><strong>FIRST CLASS INSURANCE COMPANY</strong></p> 
-                        <p >&nbsp;</p> 
-                        
-                        <p style="margin-bottom:0; text-align:right"><strong>Mohammad Hidayats</strong></p> 
-                        <p style="margin-bottom:0; text-align:right" >Authorized Signature</p>
+                        {!!$item->confirmby!!}
                     </div>
                 </div>
                 </div>

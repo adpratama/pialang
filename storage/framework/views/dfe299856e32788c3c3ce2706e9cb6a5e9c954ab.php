@@ -47,13 +47,13 @@
         </a>
       </li>
       <li class="nav-item w-100">
-        <a class="nav-link" href="<?php echo e(route('tests.index')); ?> ">
+        <a class="nav-link" href="<?php echo e(route('quotation.index')); ?> ">
           <i class="fe fe-calendar fe-16"></i>
           <span class="ml-3 item-text">Quotation Slip</span>
         </a>
       </li>
       <li class="nav-item w-100">
-        <a class="nav-link" href="calendar.html">
+        <a class="nav-link" href="<?php echo e(route('tes.index')); ?> ">
           <i class="fe fe-calendar fe-16"></i>
           <span class="ml-3 item-text">Instruct Cover</span>
         </a>

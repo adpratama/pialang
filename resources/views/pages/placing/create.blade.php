@@ -11,7 +11,7 @@
         <div class="card-body">
           <form action="{{ route('placing.store') }}" method="POST">
             @csrf     
-            
+            <input type="hidden" value="UNAPPROVED"  name="status">
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-1 col-form-label">Jakarta,</label>
                 <div class="col-sm-3 input-group">
@@ -151,7 +151,14 @@
                     @error('signfor') <div class="text-muted">{{ $message }}</div> @enderror
                 </div>
             </div>
-            
+            <div class="form-group row">
+                <label for="confirmby" class="col-sm-3 col-form-label">CONFIRMED BY</label>
+                <div class="col-sm-6 ">
+                    <textarea name="confirmby" 
+                        class="ckeditor10 form-control @error('confirmby') is-invalid @enderror">{{ old('confirmby')}}</textarea>
+                    @error('confirmby') <div class="text-muted">{{ $message }}</div> @enderror
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary float-right">Tambahkan</button>
           </form>
         </div> <!-- /. card-body -->
@@ -159,3 +166,116 @@
     </div> <!-- /. col -->
   </div>
 @endsection
+
+@push('after-script')
+<script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor1' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor2' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor3' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor4' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor5' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor6' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor7' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor8' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor9' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+  <script>
+    ClassicEditor
+            .create( document.querySelector( '.ckeditor10' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+  </script>
+@endpush

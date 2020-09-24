@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Placing extends Model
 {
     //
-    public $incrementing = false;
+    public $incrementing = true;
     
     protected $fillable = [
-        'date', 'insured', 'period', 'contract_details', 'scope', 'territorial', 'employee_details', 'vehicle_details', 'cover_type', 'coverage', 'rate', 'compensation', 'warranty', 'remarks', 'signfor'
+        'date', 'status', 'insured', 'period', 'contract_details', 'scope', 'territorial', 'employee_details', 'vehicle_details', 'cover_type', 'coverage', 'rate', 'compensation', 'warranty', 'remarks', 'signfor', 'confirmby'
     ];
 }

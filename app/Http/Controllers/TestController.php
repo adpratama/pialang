@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Test;
+use App\Models\Client;
 class TestController extends Controller
 {
     /**
@@ -14,7 +15,10 @@ class TestController extends Controller
     public function index()
     {
         //
-        return view('pages.tests.index');
+        $items = Client::all();
+        return view('pages.tes.index')->with([
+            'items' => $items
+        ]);
     }
 
     /**
@@ -86,4 +90,19 @@ class TestController extends Controller
     {
         //
     }
+    public function find_id(Request $request)
+    {
+        $client_id = $request->get('client_id');
+        if($request->ajax()) {
+            $data = '';
+            $qry = Client::all();
+            foreach ($qry as $client) {
+                $data = array(
+                        'name'  =>  $client->name,
+                        'phone'        =>  $client->phone
+                    );
+            }
+            echo json_encode($data);
+        }
+    } 
 }
