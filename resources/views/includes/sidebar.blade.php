@@ -27,7 +27,7 @@
           <span class="ml-3 item-text">Partner</span>
         </a>
         <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link pl-3" href="{{route('clients.index')}} "><span class="ml-1 item-text">Client</span></a>
           </li>
           <li class="nav-item">
@@ -53,17 +53,17 @@
         </a>
       </li>
       <li class="nav-item w-100">
-        <a class="nav-link" href="{{route('tes.index')}} ">
-          <i class="fe fe-calendar fe-16"></i>
-          <span class="ml-3 item-text">Instruct Cover</span>
-        </a>
-      </li>
-      <li class="nav-item w-100">
         <a class="nav-link" href="{{route('invoice.index')}}">
           <i class="fe fe-calendar fe-16"></i>
           <span class="ml-3 item-text">Invoice</span>
         </a>
       </li>
+      <li class="nav-item w-100">
+        <a class="nav-link" href="{{route('tes.index')}} ">
+          <i class="fe fe-calendar fe-16"></i>
+          <span class="ml-3 item-text">Instruct Cover</span>
+        </a>
+      </li>      
       <li class="nav-item w-100">
         <a class="nav-link" href="calendar.html">
           <i class="fe fe-calendar fe-16"></i>
@@ -77,9 +77,15 @@
         </a>
       </li>
     </ul>
-    {{-- <div class="btn-box w-100 mt-4 mb-1">
-      <button type="button" class="btn mb-2 btn-primary btn-lg btn-block">
+    <div class="btn-box w-100 mt-4 mb-1">
+      {{-- <a type="button" class="btn mb-2 btn-primary btn-lg btn-block" href="{{ route('logout') }}">
         <i class="fe fe-log-out fe-12 mr-2"></i><span class="small">Logout</span>
-      </button>
-    </div> --}}
+      </a> --}}
+      <a class="btn mb-2 btn-primary btn-lg btn-block " href="{{ route('logout') }}"
+  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                <i class="fe fe-log-out fe-12 mr-2"></i><span class="small">{{ __('Keluar') }}</span>
+   
+</a>
+    </div>
   </nav>

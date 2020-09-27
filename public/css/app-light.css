@@ -7491,8 +7491,8 @@ button:focus {
 .narrow.open .sidebar-left {
   overflow-y: auto;
   overflow-x: hidden;
-  min-width: 16rem;
-  width: 16rem;
+  /* min-width: 16rem; */
+  width: 12rem;
   height: 100%;
   position: fixed;
   z-index: 1000;
@@ -7559,7 +7559,7 @@ button:focus {
 .vertical .main-content,
 .vertical.hover .main-content,
 .narrow.open .main-content {
-  margin-left: 16rem;
+  margin-left: 12rem;
   overflow: hidden;
   padding: 1.2rem;
   min-height: 100vh;
@@ -8057,7 +8057,7 @@ svg.navbar-brand-img {
   fill: #1b68ff; }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #001a4e; }
+  color: #ffffff; }
   .navbar-light .navbar-nav .nav-link:hover {
     background: #f8f9fa;
     color: #1b68ff; }

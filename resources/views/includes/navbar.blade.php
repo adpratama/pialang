@@ -1,11 +1,11 @@
-<button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+{{-- <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
     <i class="fe fe-menu navbar-toggler-icon"></i>
-  </button>
-  <a class="" href="{{ route('logout') }}"
+  </button> --}}
+  {{-- <a class="float-right " href="{{ route('logout') }}"
   onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
    {{ __('Keluar') }}
-</a>
+</a> --}}
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
    @csrf
