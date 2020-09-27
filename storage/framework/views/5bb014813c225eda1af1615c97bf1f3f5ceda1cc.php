@@ -3,8 +3,8 @@
     <div class="col-md-12">
       <div class="card shadow mb-4">
         <div class="card-header">
-          <strong class="card-title">Quotation Slip</strong>
-          <strong class="float-right">REQUEST FOR QUOTATION SLIP</strong>
+          <strong class="card-title">Placing Slip</strong>
+          <strong class="float-right">REQUEST FOR PLACING SLIP</strong>
         </div>
         <div class="card-body">
           <form action="<?php echo e(route('placing.store')); ?>" method="POST">
@@ -19,8 +19,35 @@
                     </div>
                 </div>
             </div>
+            
             <p><strong>FIRST CLASS INSURANCE COMPANY</strong> </p>  
             <P>Up : <strong> Marketing / Underwriting Manager</strong></P>
+            <div class="form-group row">
+                <label for="insurance_id" class="col-sm-2 col-form-label">Lembaga Asuransi</label>
+                <div class="col-sm-3 ">
+                    <select name="insurance_id" class="form-control <?php $__errorArgs = ['insurance_id'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is_invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>">
+                        <option value="">--Pilih Lembaga Asuransi--</option>
+                        <?php $__currentLoopData = $insurances; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $insurance): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($insurance->id); ?>"><?php echo e($insurance->name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </select>
+                    <?php $__errorArgs = ['insurance_id'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-muted"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
+            </div>
             <h2 align="center">INSURANCE PLACING SLIP NO: 000</h2>
             <p>We reference you to give the best quotation for the Insurance Matter with several information and documents attached are</p>
             <div class="row" style="background-color: rgb(153, 150, 150); display: block">

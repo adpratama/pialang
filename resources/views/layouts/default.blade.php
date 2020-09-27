@@ -15,7 +15,7 @@
       <nav class="topnav navbar navbar-light">
         @include('includes.navbar')
       </nav>
-      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar style="background-color: #5da7d9 !important">
         @include('includes.sidebar')
       </aside>
       <main role="main" class="main-content">

@@ -12,9 +12,9 @@
                 <div class="col">
                   <h2 class="page-title">Quotation Slip</h2>
                 </div>
-                <div class="col-auto">
+                {{-- <div class="col-auto">
                   <a href="{{route('quotation.create')}} " type="button" class="btn btn-secondary" >Tambah</a>          
-                </div>
+                </div> --}}
             </div>
             <div class="card shadow">
               <div class="card-body">
@@ -24,42 +24,48 @@
                     <tr>
                       <th>#</th>
                       <th>Tanggal</th>
+                      {{-- <th>Insurance</th> --}}
                       <th>Insured</th>
                       <th>Status</th>
                       <th>Aksi</th>
+                      <th>Cetak</th>
                     </tr>
                   </thead>
-                  {{-- <tbody>
-                      @forelse ($items as $item)
+                  <tbody>
+                      @forelse ($quotations as $quotation)
                       <tr>
-                        <td>{{$item->id}} </td>
-                        <td>{{$item->date}}</td>
-                        <td>{!! substr($item->insured, 11, 50) !!}</td>
+                        <td>{{$quotation->id}} </td>
+                        <td>{{$quotation->date}}</td>
+                        <td>{{$quotation->insureds->name}}  </td>
+
+                        {{-- <td>{!! substr($quotation->insured, 11, 50) !!}</td> --}}
                         <td>
-                          @if($item->status == 'UNAPPROVED')
+                          @if($quotation->status == 'UNAPPROVED')
                               <span class="badge badge-warning">
-                          @elseif($item->status == 'APPROVED')
+                          @elseif($quotation->status == 'APPROVED')
                               <span class="badge badge-success">
-                          @elseif($item->status == 'REJECTED')
+                          @elseif($quotation->status == 'REJECTED')
                               <span class="badge badge-danger">
                           @else 
                               <span>
                           @endif
-                          {{$item->status}}
+                          {{$quotation->status}}
                         </td>
                         <td>
-                          @if($item->status == 'UNAPPROVED')
-                              <a href="{{ route('placing.status', $item->id) }}?status=APPROVED" class="btn btn-success ">                                                     
+                          @if($quotation->status == 'UNAPPROVED')
+                              <a href="{{ route('placing.status', $quotation->id) }}?status=APPROVED" class="btn btn-success ">                                                     
                                   APPROVE
                               </a>
-                              <a href="{{ route('placing.status', $item->id) }}?status=REJECTED" class="btn btn-danger ">                                                     
+                              <a href="{{ route('placing.status', $quotation->id) }}?status=REJECTED" class="btn btn-danger ">                                                     
                                   REJECT
                               </a>
-                              <a class="btn btn-light " href="{{route('placing.edit', $item->id)}} ">Edit</a>
+                              <a class="btn btn-light " href="{{route('placing.edit', $quotation->id)}} ">Edit</a>
 
-                          @endif
-                          <a class="btn btn-light " href="{{route('placing.show', $item->id)}} "><i class="fe fe-file-text"></i></a>
-                          
+                          @endif                          
+                        </td>
+                        <td>
+                          <a class="btn btn-light " href="{{route('quotation.show', $quotation->id)}} "><i class="fe fe-file-text"></i></a>
+                          <a class="btn btn-light " href="{{route('placing.show', $quotation->id)}} ">Invoice</a>
                         </td>
                       </tr>
                       @empty
@@ -69,7 +75,7 @@
                         </td>
                       </tr>
                       @endforelse
-                  </tbody> --}}
+                  </tbody>
                 </table>
               </div>
             </div>

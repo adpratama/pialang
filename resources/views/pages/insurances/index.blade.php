@@ -46,6 +46,7 @@
                         <td>{{$item->phone_pic}}</td>
                         <td>
                           <a class="btn mb-2 btn-light" href="{{route('insurance.edit', $item->id)}} ">Edit</a>
+                          <a class="btn mb-2 btn-light" href="{{route('placing.makeps', $item->id)}} ">Make PS</a>
                         </td>
                       </tr>
                       @empty

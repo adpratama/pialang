@@ -21,10 +21,10 @@
                     </div>
                 </div>
             </div>
-            
-            <p><strong>FIRST CLASS INSURANCE COMPANY</strong> </p>  
+            <input type="hidden" name="insurance_id" value="{{$item->id}} ">
+            <p><strong>{{$item->name}} </strong> </p>  
             <P>Up : <strong> Marketing / Underwriting Manager</strong></P>
-            <div class="form-group row">
+            {{-- <div class="form-group row">
                 <label for="insurance_id" class="col-sm-2 col-form-label">Lembaga Asuransi</label>
                 <div class="col-sm-3 ">
                     <select name="insurance_id" class="form-control @error('insurance_id') is_invalid @enderror">
@@ -35,7 +35,7 @@
                     </select>
                     @error('insurance_id') <div class="text-muted">{{ $message }}</div> @enderror
                 </div>
-            </div>
+            </div> --}}
             <h2 align="center">INSURANCE PLACING SLIP NO: 000</h2>
             <p>We reference you to give the best quotation for the Insurance Matter with several information and documents attached are</p>
             <div class="row" style="background-color: rgb(153, 150, 150); display: block">

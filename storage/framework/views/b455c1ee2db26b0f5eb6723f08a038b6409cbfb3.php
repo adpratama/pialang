@@ -13,14 +13,14 @@
            
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" name="id" id="id" value="<?php echo e($item); ?> <?php $__errorArgs = ['id'];
+                <input hidden type="text" class="form-control" name="id" id="id" value="<?php echo e($item); ?> <?php $__errorArgs = ['id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?> "hidden>
+unset($__errorArgs, $__bag); ?> ">
                 <label for="name">Nama</label>
                 <input type="text" class="form-control" name="name" id="name" value="<?php echo e(old('name')); ?> <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

@@ -44,9 +44,11 @@
               
                     <th>#</th>              
                     <th>Tanggal</th>
+                    <th>Insurance</th>
                     <th>Insured</th>
                     <th>Status</th>
                     <th>Aksi</th>
+                    <th>Cetak</th>
                     
                   </tr>
                 
@@ -60,6 +62,7 @@
                 
                     <td>{{$item->id}} </td>
                     <td>{{$item->date}}</td>
+                    <td>{{$item->insurance->name}}</td>
                     <td>{!! substr($item->insured, 11, 50) !!}</td>
                     <td>
                           
@@ -83,7 +86,7 @@
                           {{$item->status}}
                        
                     </td>
-                    <td>
+                    <td class="float-right">
                     
                       @if($item->status == 'UNAPPROVED')
                     
@@ -104,22 +107,25 @@
 
                       @endif
                       
-                      <a class="btn btn-light " 
-                        href="{{route('placing.show', $item->id)}} ">
-                          <i class="fe fe-file-text"></i>
-                      </a>
+                      
                         
                       @if ($item->status == 'APPROVED')
                       
-                        <a href="{{route('placing.qs', $item->id)}} " 
+                        <a href="{{route('quotation.qs', $item->id)}} " 
                           class="btn btn-success ">
                             Create Quotation
                         </a>
                               
                       @endif
-                    
                     </td>
-                    
+
+                    <td>
+                      <a class="btn btn-light " 
+                        href="{{route('placing.show', $item->id)}} ">
+                          <i class="fe fe-file-text"></i>
+                          {{-- Cetak --}}
+                      </a>
+                    </td>
                   </tr>
                   
                   @empty

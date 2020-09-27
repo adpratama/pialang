@@ -44,6 +44,7 @@
                         <td><?php echo e($item->phone_pic); ?></td>
                         <td>
                           <a class="btn mb-2 btn-light" href="<?php echo e(route('insurance.edit', $item->id)); ?> ">Edit</a>
+                          <a class="btn mb-2 btn-light" href="<?php echo e(route('placing.makeps', $item->id)); ?> ">Make PS</a>
                         </td>
                       </tr>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

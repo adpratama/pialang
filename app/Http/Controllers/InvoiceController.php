@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Placing;
-use App\Models\Quotation;
-use App\Models\Insured;
 
-
-class QuotationSlipController extends Controller
+class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +13,7 @@ class QuotationSlipController extends Controller
      */
     public function index()
     {
-        //
-        $quotations = Quotation::with('insureds')->get();
-        // $insured = Insured::with('insured')->get();
-        // $items = ProductGallery::with('product')->get();
-        return view('pages.quotation.index')->with([
-            'quotations' => $quotations
-            // 'insured'=>$insured
-        ]);
+        return view('pages.invoice.index');
     }
 
     /**
@@ -32,15 +21,9 @@ class QuotationSlipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
         //
-        $item = Placing::findOrFail($id);
-
-        return view('pages.quotation.create')->with([
-            'item' => $item
-        ]);
-
     }
 
     /**
@@ -52,10 +35,6 @@ class QuotationSlipController extends Controller
     public function store(Request $request)
     {
         //
-        $data = $request->all();
-
-        Quotation::create($data);
-        return redirect()->route('quotation.index')->with('message', 'Quotation Berhasil Dibuat');
     }
 
     /**
@@ -67,12 +46,6 @@ class QuotationSlipController extends Controller
     public function show($id)
     {
         //
-        $item = Quotation::findOrFail($id);
-        // ->with('insureds')->get();
-
-        return view('pages.quotation.show')->with([
-            'item' => $item
-        ]);
     }
 
     /**
@@ -107,16 +80,5 @@ class QuotationSlipController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function qs($id)
-    {
-        $item = Placing::findOrFail($id);
-        $insureds = Insured::all();
-        // dd($item);
-        // var_dump($item);
-        return view('pages.quotation.create')->with([
-            'item'=>$item,
-            'insureds'=>$insureds
-        ]);
     }
 }

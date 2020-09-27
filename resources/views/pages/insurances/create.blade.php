@@ -15,7 +15,7 @@
            
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" name="id" id="id" value="{{$item}} @error('id') is-invalid @enderror "hidden>
+                <input hidden type="text" class="form-control" name="id" id="id" value="{{$item}} @error('id') is-invalid @enderror ">
                 <label for="name">Nama</label>
                 <input type="text" class="form-control" name="name" id="name" value="{{old('name')}} @error('name') is-invalid @enderror ">
                 @error('name')

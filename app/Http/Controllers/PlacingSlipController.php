@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Placing;
+use App\Models\Insurance;
 use App\Http\Controllers\PdfController;
 class PlacingSlipController extends Controller
 {
@@ -12,10 +13,15 @@ class PlacingSlipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
-        $items = Placing::all();
+        $items = Placing::with('insurance')->get();
 
         return view ('pages.placing.index')->with([
             'items' => $items
@@ -30,7 +36,10 @@ class PlacingSlipController extends Controller
     public function create()
     {
         //
-        return view ('pages.placing.create');
+        $insurances = Insurance::all();
+        return view ('pages.placing.create')->with([
+            'insurances' => $insurances
+        ]);
     }
 
     /**
@@ -131,12 +140,14 @@ class PlacingSlipController extends Controller
         return redirect()->route('placing.index');
     }
 
-    public function qs($id)
+    
+
+    public function makeps($id)
     {
-        $item = Placing::findOrFail($id);
-        
-        return view('pages.quotation.create')->with([
-            'item'=>$item
+        $item = Insurance::findOrFail($id);
+
+        return view('pages.placing.makeps')->with([
+            'item' => $item
         ]);
     }
 }

@@ -615,6 +615,29 @@
     ),
     'compiled' => '/var/www/html/pialang/storage/framework/views',
   ),
+  'dompdf' => 
+  array (
+    'show_warnings' => false,
+    'orientation' => 'portrait',
+    'defines' => 
+    array (
+      'font_dir' => '/var/www/html/pialang/storage/fonts/',
+      'font_cache' => '/var/www/html/pialang/storage/fonts/',
+      'temp_dir' => '/tmp',
+      'chroot' => '/var/www/html/pialang',
+      'enable_font_subsetting' => false,
+      'pdf_backend' => 'CPDF',
+      'default_media_type' => 'screen',
+      'default_paper_size' => 'a4',
+      'default_font' => 'serif',
+      'dpi' => 96,
+      'enable_php' => false,
+      'enable_javascript' => true,
+      'enable_remote' => true,
+      'font_height_ratio' => 1.1,
+      'enable_html5_parser' => false,
+    ),
+  ),
   'flare' => 
   array (
     'key' => NULL,

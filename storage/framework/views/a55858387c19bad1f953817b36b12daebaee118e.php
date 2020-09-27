@@ -10,9 +10,7 @@
                 <div class="col">
                   <h2 class="page-title">Quotation Slip</h2>
                 </div>
-                <div class="col-auto">
-                  <a href="<?php echo e(route('quotation.create')); ?> " type="button" class="btn btn-secondary" >Tambah</a>          
-                </div>
+                
             </div>
             <div class="card shadow">
               <div class="card-body">
@@ -22,12 +20,59 @@
                     <tr>
                       <th>#</th>
                       <th>Tanggal</th>
+                      
                       <th>Insured</th>
                       <th>Status</th>
                       <th>Aksi</th>
+                      <th>Cetak</th>
                     </tr>
                   </thead>
-                  
+                  <tbody>
+                      <?php $__empty_1 = true; $__currentLoopData = $quotations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $quotation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                      <tr>
+                        <td><?php echo e($quotation->id); ?> </td>
+                        <td><?php echo e($quotation->date); ?></td>
+                        <td><?php echo e($quotation->insureds->name); ?>  </td>
+
+                        
+                        <td>
+                          <?php if($quotation->status == 'UNAPPROVED'): ?>
+                              <span class="badge badge-warning">
+                          <?php elseif($quotation->status == 'APPROVED'): ?>
+                              <span class="badge badge-success">
+                          <?php elseif($quotation->status == 'REJECTED'): ?>
+                              <span class="badge badge-danger">
+                          <?php else: ?> 
+                              <span>
+                          <?php endif; ?>
+                          <?php echo e($quotation->status); ?>
+
+                        </td>
+                        <td>
+                          <?php if($quotation->status == 'UNAPPROVED'): ?>
+                              <a href="<?php echo e(route('placing.status', $quotation->id)); ?>?status=APPROVED" class="btn btn-success ">                                                     
+                                  APPROVE
+                              </a>
+                              <a href="<?php echo e(route('placing.status', $quotation->id)); ?>?status=REJECTED" class="btn btn-danger ">                                                     
+                                  REJECT
+                              </a>
+                              <a class="btn btn-light " href="<?php echo e(route('placing.edit', $quotation->id)); ?> ">Edit</a>
+
+                          <?php endif; ?>                          
+                        </td>
+                        <td>
+                          <a class="btn btn-light " href="<?php echo e(route('quotation.show', $quotation->id)); ?> "><i class="fe fe-file-text"></i></a>
+                          <a class="btn btn-light " href="<?php echo e(route('placing.show', $quotation->id)); ?> ">Invoice</a>
+                        </td>
+                      </tr>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                      <tr>
+                        <td colspan="9" class="text-center p-4">
+                            Data tidak tersedia
+                        </td>
+                      </tr>
+                      <?php endif; ?>
+                  </tbody>
                 </table>
               </div>
             </div>

@@ -14,4 +14,10 @@ class Insurance extends Model
     protected $fillable = [
         'id', 'name', 'office', 'address', 'phone', 'email', 'pic', 'phone_pic'
     ];
+
+    public function placing()
+    {
+        return $this->hasMany(Placing::class, 'insurance_id');
+    }
+    
 }

@@ -85,34 +85,6 @@ unset($__errorArgs, $__bag); ?>
       </div> <!-- /. card -->
     </div> <!-- /. col -->
   </div>
-  <script type="text/javascript">
-    var delay = (function () {
-        var timer = 0;
-        return function (callback, ms) {
-            clearTimeout(timer);
-            timer = setTimeout(callback, ms);
-        };
-    })();
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $("#client_id").keyup(function () {
-        delay(function () {
-            var id = $("#client_id").val();
-            $.ajax({
-                url: "<?php echo e(route('find.id')); ?>",
-                method:'GET',
-                data:"nip="+nip ,
-            }).success(function (data) {
-                var json = data,
-                obj = JSON.parse(json);
-                $('#name').val(obj.name);
-                $('#phone').val(obj.phone);
-            });
-        }, 1000);
-    });
-</script>
+  
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/pialang/resources/views/pages/tes/index.blade.php ENDPATH**/ ?>

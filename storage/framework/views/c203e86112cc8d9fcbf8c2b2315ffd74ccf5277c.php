@@ -15,7 +15,7 @@
       <nav class="topnav navbar navbar-light">
         <?php echo $__env->make('includes.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       </nav>
-      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar style="background-color: #5da7d9 !important">
         <?php echo $__env->make('includes.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       </aside>
       <main role="main" class="main-content">
