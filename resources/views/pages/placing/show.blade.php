@@ -2,22 +2,36 @@
 
 @section('content')
 
-<div class="container-fluid" style="background-color: white">
+{{-- <style>
+    .bg-immg: {
+        background-img: url({{url('bg.png')}});
+        width: 500px;
+        height: 700px
+    }
+</style> --}}
+<div class="container-fluid" style="background-color: white; background-image: url({{url('background.jpg')}} ); background-size: 210mm 297mm ">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-10 col-xl-9">
+      {{-- <div class="col-12 col-lg-10 col-xl-9"> --}}
+        <div class="col-12 col-lg-10 col-xl-8">
+
         {{-- <div class="card shadow"> --}}
             {{-- <div class="card-header">
             <strong class="card-title">Quotation Slip</strong>
             <strong class="float-right">REQUEST FOR QUOTATION SLIP {{$item->id}} </strong>
             </div> --}}
             
-            <div class="card-body p-8">
-                <h4 class="float-right" style="background-color: black; color:white">REQUEST FOR QUOTATION SLIP</h4> <br /><br /><br />
+            <div class="card-body p-5">
+                <h4 class="float-right" style="background-color: black; color:white; ">REQUEST FOR QUOTATION SLIP</h4> <br /><br /><br />
                 <p >Jakarta, {{$item->date}}</p>
                     
                 
-                <p><strong>FIRST CLASS INSURANCE COMPANY</strong> </p>  
-                <P>Up : <strong> Marketing / Underwriting Manager</strong></P>
+                <p>
+                    <strong>
+                        {{$item->insurance->name}} <br />
+                        {{$item->insurance->address}} 
+                    </strong> 
+                </p>  
+                <P>Up : <strong>{{ $item->insurance->pic}} </strong></P>
                 <h4 align="center">INSURANCE PLACING SLIP NO: {{$item->id}} </h4>
                 <p>We reference you to give the best quotation for the Insurance Matter with several information and documents attached are</p>
                 <div class="row" style="background-color: rgb(153, 150, 150); display: block">

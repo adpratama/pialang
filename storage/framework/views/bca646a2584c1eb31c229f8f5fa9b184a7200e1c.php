@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/jquery.timepicker.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/quill.snow.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/dataTables.bootstrap4.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/select2.css')); ?>">
     
     
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="<?php echo e(asset('css/daterangepicker.css')); ?>">
+    
     <!-- App CSS -->
     
     <link rel="stylesheet" href="<?php echo e(asset('css/app-light.css')); ?>" id="lightTheme">
-    <link rel="stylesheet" href="<?php echo e(asset('css/app-dark.css')); ?>" id="darkTheme" disabled><?php /**PATH /var/www/html/pialang/resources/views/includes/style.blade.php ENDPATH**/ ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/app-dark.css')); ?>" id="darkTheme" disabled>
+    <link rel="stylesheet" href="<?php echo e(asset('assets/air-datepicker/dist/css/datepicker.css')); ?> "><?php /**PATH /var/www/html/pialang/resources/views/includes/style.blade.php ENDPATH**/ ?>

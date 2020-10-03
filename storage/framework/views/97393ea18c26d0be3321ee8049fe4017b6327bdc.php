@@ -19,7 +19,17 @@
       Chart.defaults.global.defaultFontColor = colors.mutedColor;
     </script>
     
+    <script src='<?php echo e(asset('js/jquery.timepicker.js')); ?>'></script>
+    <script src='<?php echo e(asset('js/dropzone.min.js')); ?>'></script>
+    <script src='<?php echo e(asset('js/uppy.min.js')); ?>'></script>
+    <script src='<?php echo e(asset('js/quill.min.js')); ?>'></script>
+    <script src="<?php echo e(asset('assets/air-datepicker/dist/js/datepicker.js')); ?> "></script>
+    <script src="<?php echo e(asset('assets/air-datepicker/dist/js/i18n/datepicker.en.js')); ?> "></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src='<?php echo e(asset('js/select2.min.js')); ?>'></script>
+
+
+    
     
     <?php /**PATH /var/www/html/pialang/resources/views/includes/script.blade.php ENDPATH**/ ?>

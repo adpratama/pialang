@@ -77,3 +77,19 @@
     </div> <!-- /. col -->
   </div>
 @endsection
+
+@push('after-script')
+<script>
+  $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'MM/DD/YYYY'
+        }
+      });
+</script>
+
+@endpush

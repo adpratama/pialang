@@ -59,7 +59,7 @@
         </a>
       </li>
       <li class="nav-item w-100">
-        <a class="nav-link" href="{{route('tes.index')}} ">
+        <a class="nav-link" href="{{route('instruct.index')}} ">
           <i class="fe fe-calendar fe-16"></i>
           <span class="ml-3 item-text">Instruct Cover</span>
         </a>

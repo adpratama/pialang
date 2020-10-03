@@ -25,13 +25,30 @@
     <script src='{{asset('js/jquery.mask.min.js')}}'></script>
     <script src='{{asset('js/select2.min.js')}}'></script>
     <script src='{{asset('js/jquery.steps.min.js')}}'></script>
-    <script src='{{asset('js/jquery.validate.min.js')}}'></script>
+    {{-- <script src='{{asset('js/jquery.validate.min.js')}}'></script> --}}
     <script src='{{asset('js/jquery.timepicker.js')}}'></script>
     <script src='{{asset('js/dropzone.min.js')}}'></script>
     <script src='{{asset('js/uppy.min.js')}}'></script>
-    <script src='{{asset('js/quill.min.js')}}'></script> --}}
+    <script src='{{asset('js/quill.min.js')}}'></script>
+    <script src="{{asset('assets/air-datepicker/dist/js/datepicker.js')}} "></script>
+    <script src="{{asset('assets/air-datepicker/dist/js/i18n/datepicker.en.js')}} "></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src='{{asset('js/select2.min.js')}}'></script>
+
+
+    {{-- <script>
+      $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'YYYY/MM/DD'
+        }
+      });
+    </script> --}}
     
     {{-- <script>
       $('.select2').select2(

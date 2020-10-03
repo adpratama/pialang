@@ -15,4 +15,9 @@ class Quotation extends Model
         return $this->belongsTo(Insured::class, 'insured_id', 'id');
         
     }
+
+    public function insurances()
+    {
+        return $this->belongsTo(Insurance::class, 'insurance_id', 'id');
+    }
 }

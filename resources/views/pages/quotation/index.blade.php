@@ -28,8 +28,8 @@
                       <th>Insured</th>
                       <th>Status</th>
                       <th>Aksi</th>
-                      {{-- <th>Cetak</th>
-                      <th>Aksi</th> --}}
+                      {{-- <th>Instruct Cover</th> --}}
+                      {{-- <th>Aksi</th> --}}
                     </tr>
                   </thead>
                   <tbody>
@@ -86,11 +86,15 @@
                                 
 
                               @endif
-                              <a class="dropdown-item " href="{{route('placing.edit', $quotation->id)}} "><i class="fe fe-edit"></i>Edit</a>
+                              {{-- <a class="dropdown-item " href="{{route('placing.edit', $quotation->id)}} "><i class="fe fe-edit"></i>Edit</a> --}}
                               <a class="dropdown-item " href="{{route('quotation.show', $quotation->id)}} "><i class="fe fe-file-text"></i>Cetak</a>
                               <a class="dropdown-item " href="{{route('placing.show', $quotation->id)}} ">Invoice</a>
+                          <a href="{{route('instruct.create_ic', $quotation->id) }} "class="dropdown-item">Make IC</a>
+
                             </div>
                           </div>  
+                        </td>
+                        <td>
                         </td>
                       </tr>
                       @empty

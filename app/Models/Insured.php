@@ -28,5 +28,9 @@ class Insured extends Model
         return $this->hasMany(Quotation::class, 'insured_id');
     }
     
+    public function instruct()
+    {
+        return $this->hasMany(Instruct::class, 'insured_id');
+    }
 }
 

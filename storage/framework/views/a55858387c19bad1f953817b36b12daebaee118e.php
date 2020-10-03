@@ -25,6 +25,7 @@
                       <th>Status</th>
                       <th>Aksi</th>
                       
+                      
                     </tr>
                   </thead>
                   <tbody>
@@ -68,11 +69,15 @@
                                 
 
                               <?php endif; ?>
-                              <a class="dropdown-item " href="<?php echo e(route('placing.edit', $quotation->id)); ?> "><i class="fe fe-edit"></i>Edit</a>
+                              
                               <a class="dropdown-item " href="<?php echo e(route('quotation.show', $quotation->id)); ?> "><i class="fe fe-file-text"></i>Cetak</a>
                               <a class="dropdown-item " href="<?php echo e(route('placing.show', $quotation->id)); ?> ">Invoice</a>
+                          <a href="<?php echo e(route('instruct.create_ic', $quotation->id)); ?> "class="dropdown-item">Make IC</a>
+
                             </div>
                           </div>  
+                        </td>
+                        <td>
                         </td>
                       </tr>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

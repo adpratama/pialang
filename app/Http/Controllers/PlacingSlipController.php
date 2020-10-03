@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Placing;
 use App\Models\Insurance;
 use App\Http\Controllers\PdfController;
+use PDF; //import Fungsi PDF
+use Barryvdh\Snappy;
+
+
 class PlacingSlipController extends Controller
 {
     /**
@@ -149,5 +153,30 @@ class PlacingSlipController extends Controller
         return view('pages.placing.makeps')->with([
             'item' => $item
         ]);
+    }
+
+    public function printTable($id)
+    {
+        $item = Placing::findOrFail($id);
+
+        $pdf = PDF::loadView('pages.placing.show') 
+            ->setOption('page-width', '210')
+            ->setOption('page-height', '297')
+            ->with(['item' => $item]);
+
+        //Aktifkan Local File Access supaya bisa pakai file external ( cth File .CSS )
+        $pdf->setOption('enable-local-file-access', true);
+
+        // Stream untuk menampilkan tampilan PDF pada browse
+        return $pdf->stream('table.pdf');
+
+        // Jika ingin langsung download (tanpai melihat tampilannya terlebih dahulu) kalian bisa pakai fungsi download
+        // return $pdf->download('table.pdf');
+
+        // return view ('pages.placing.show')->with([
+        //     'item'=>$item
+        // ]);
+
+
     }
 }

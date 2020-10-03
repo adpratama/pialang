@@ -32,10 +32,10 @@ Route::get('placing/{id}/set-status', 'PlacingSlipController@setStatus')
     ->name('placing.status');
 Route::get('quotation/{id}/qs', 'QuotationSlipController@qs')->name('quotation.qs');
 Route::get('find-id', ['uses'=>'TestController@find_id', 'as'=>'find.id']);
-
+Route::get('print-table/{id}', 'PlacingSlipController@printTable')->name('placing.printTable');
 // Route::get('/pdf', 'PdfController@print')->name('print');
-
+Route::get('instruct/{id}/create-ic', 'InstructCoverController@create_ic')->name('instruct.create_ic');
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::resource('instruct', 'InstructCoverController');
 
 Route::resource('invoice', 'InvoiceController');
