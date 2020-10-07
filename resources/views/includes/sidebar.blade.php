@@ -24,17 +24,29 @@
       <li class="nav-item dropdown" >
         <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
           <i class="fe fe-home fe-16"></i>
-          <span class="ml-3 item-text">Partner</span>
+          <span class="ml-3 item-text">Master</span>
         </a>
         <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
           <li class="nav-item ">
-            <a class="nav-link pl-3" href="{{route('clients.index')}} "><span class="ml-1 item-text">Client</span></a>
+            <a class="nav-link pl-3" href="{{route('clients.index')}} "><span class="ml-1 item-text">Client/Insured</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link pl-3" href="{{route('insurance.index')}}"><span class="ml-1 item-text">Insurance</span></a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link pl-3" href="{{route('insured.index')}}"><span class="ml-1 item-text">Insured</span></a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="{{route('jenis_asuransi.index')}}"><span class="ml-1 item-text">Jenis Asuransi</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="{{route('authorize_sign.index')}}"><span class="ml-1 item-text">Authorize Sign</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="{{route('mata_uang.index')}}"><span class="ml-1 item-text">Mata Uang</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="{{route('no_rekening.index')}}"><span class="ml-1 item-text">No Rekening</span></a>
           </li>
         </ul>
       </li>
@@ -59,7 +71,7 @@
         </a>
       </li>
       <li class="nav-item w-100">
-        <a class="nav-link" href="{{route('instruct.index')}} ">
+        <a class="nav-link" href="{{route('tes.index')}} ">
           <i class="fe fe-calendar fe-16"></i>
           <span class="ml-3 item-text">Instruct Cover</span>
         </a>

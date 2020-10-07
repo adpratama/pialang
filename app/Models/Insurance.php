@@ -19,14 +19,10 @@ class Insurance extends Model
     {
         return $this->hasMany(Placing::class, 'insurance_id');
     }
-    
-    public function quotation()
-    {
-        return $this->hasMany(Quotation::class, 'insurance_id' );
-    }
 
-    public function instruct()
+    public function invoice()
     {
-        return $this->hasMany(Instruct::class, 'insurance_id');
+        return $this->hasMany(Invoice::class, 'invoices_id');
     }
+    
 }

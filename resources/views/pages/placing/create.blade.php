@@ -14,30 +14,16 @@
             <input type="hidden" value="UNAPPROVED"  name="status">
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-1 col-form-label">Jakarta,</label>
-                {{-- <input class="form-control col-sm-3" id="example-date" type="date" name="date"> --}}
-
                 <div class="col-sm-3 input-group">
-                    {{-- <input type="text"
-                        class="datepicker-here form-control"
-                        name="date"
-                        data-language='en'
-                        data-multiple-dates="3"
-                        data-multiple-dates-separator=", "
-                        data-position='bottom left'
-                         autocomplete="off"/> --}}
-                    <input type="date" name="date" class="form-control drgpicker" id="date-input1" aria-describedby="button-addon2">
-                    {{-- <div class="input-group-append">
+                    <input type="text" name="date" class="form-control drgpicker" id="date-input1" aria-describedby="button-addon2">
+                    <div class="input-group-append">
                       <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
-            {{-- <div class="form-group mb-3">
-                <label for="example-date col-sm-1 col-form-label">Date</label>
-                <input class="form-control col-sm-3" id="example-date" type="date" name="date">
-              </div> --}}
             
-            {{-- <p><strong>FIRST CLASS INSURANCE COMPANY</strong> </p>  
-            <P>Up : <strong> Marketing / Underwriting Manager</strong></P> --}}
+            <p><strong>FIRST CLASS INSURANCE COMPANY</strong> </p>  
+            <P>Up : <strong> Marketing / Underwriting Manager</strong></P>
             <div class="form-group row">
                 <label for="insurance_id" class="col-sm-2 col-form-label">Lembaga Asuransi</label>
                 <div class="col-sm-3 ">

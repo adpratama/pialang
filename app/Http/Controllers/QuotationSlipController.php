@@ -116,7 +116,7 @@ class QuotationSlipController extends Controller
         // var_dump($item);
         return view('pages.quotation.create')->with([
             'item'=>$item,
-            'insureds'=>$insureds
+            // 'insureds'=>$insureds
         ]);
     }
 }

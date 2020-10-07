@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Quotation extends Model
 {
     protected $fillable = [
-        'name','insured_id', 'status', 'date', 'insured', 'period', 'contract_details', 'scope', 'territorial', 'employee_details', 'vehicle_details', 'cover_type', 'coverage', 'rate', 'warranty', 'remarks', 'signfor', 'confirmby'
+        'name','insured_id', 'insurance_id', 'status', 'date', 'insured', 'period', 'contract_details', 'scope', 'territorial', 'employee_details', 'vehicle_details', 'cover_type', 'coverage', 'rate', 'warranty', 'remarks', 'signfor', 'confirmby'
     ];
 
     public function insureds()
@@ -15,9 +15,9 @@ class Quotation extends Model
         return $this->belongsTo(Insured::class, 'insured_id', 'id');
         
     }
-
-    public function insurances()
+    public function invoices()
     {
-        return $this->belongsTo(Insurance::class, 'insurance_id', 'id');
+        return $this->belongsTo(Invoice::class, 'invoice_id', 'id');
+        
     }
 }

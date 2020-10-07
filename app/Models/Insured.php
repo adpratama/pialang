@@ -27,10 +27,11 @@ class Insured extends Model
     {
         return $this->hasMany(Quotation::class, 'insured_id');
     }
-    
-    public function instruct()
+
+    public function invoice()
     {
-        return $this->hasMany(Instruct::class, 'insured_id');
+        return $this->hasMany(Invoice::class, 'invoice_id');
     }
+    
 }
 
