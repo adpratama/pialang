@@ -125,9 +125,8 @@
                             </a>
                                   
                           <?php endif; ?>
-                            
                             <a class="dropdown-item " 
-                              href="<?php echo e(route('placing.printTable', $item->id)); ?> ">
+                              href="<?php echo e(route('placing.show', $item->id)); ?> ">
                                 <i class="fe fe-file-text"></i>
                                 Cetak
                             </a>

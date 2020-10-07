@@ -167,13 +167,8 @@
                             </a>
                                   
                           @endif
-                            {{-- <a class="dropdown-item " 
-                              href="{{route('placing.show', $item->id)}} ">
-                                <i class="fe fe-file-text"></i>
-                                Cetak
-                            </a> --}}
                             <a class="dropdown-item " 
-                              href="{{route('placing.printTable', $item->id)}} ">
+                              href="{{route('placing.show', $item->id)}} ">
                                 <i class="fe fe-file-text"></i>
                                 Cetak
                             </a>

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Invoice;
+use App\Models\Quotation;
+use App\Models\Insured;
+use App\Models\Insurance;
+
 class InvoiceController extends Controller
 {
     /**
@@ -13,7 +18,11 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        return view('pages.invoice.index');
+        $items = Invoice::with('insureds')->get();
+
+        return view('pages.invoice.index')->with([
+            'items' => $items
+        ]);
     }
 
     /**
@@ -23,7 +32,18 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        $insurances = Insurance::all();
+        $insureds = Insured::all();
+        return view('pages.invoice.create')->with([
+            'insurances' => $insurances, 
+            'insureds' => $insureds
+        ]);
+
+        // $item = Invoice::findOrFail($id);
+
+        // return view('pages.invoice.controller')->with([
+        //     'item' => $item
+        // ]);
     }
 
     /**
@@ -34,7 +54,10 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        Invoice::create($data);
+        return redirect()->route('invoice.index');
     }
 
     /**
@@ -45,7 +68,13 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Invoice::findOrFail($id);
+        // $insured = Insured::all();
+
+        return view('pages.invoice.show')->with([
+            'item' => $item,
+            // 'insured' => $insured
+        ]);
     }
 
     /**
@@ -56,7 +85,11 @@ class InvoiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Invoice::findOrFail($id);
+        
+        return view('pages.invoice.edit')->with([
+            'item' => $item
+        ]);
     }
 
     /**
@@ -69,6 +102,11 @@ class InvoiceController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = $request->all();
+        $item = Invoice::findOrFail($id);
+        $item->update($data);
+
+        return redirect()->route('invoice.index');
     }
 
     /**
@@ -81,4 +119,27 @@ class InvoiceController extends Controller
     {
         //
     }
+
+    public function makeinvc($id)
+    {
+        $item = Quotation::findOrFail($id);
+        // $insureds = Insured::all();
+
+        return view('pages.invoice.create')->with([
+            'item' => $item,
+            // 'insureds' => $insureds
+        ]);
+    }
+
+    public function showc($id)
+    {
+        $item = Invoice::findOrFail($id);
+        // $insured = Insured::all();
+
+        return view('pages.invoice.showc')->with([
+            'item' => $item,
+            // 'insured' => $insured
+        ]);
+    }
+
 }
